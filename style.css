@@ -1,6 +1,6 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Splash&display=swap');
+
 
 *{
     box-sizing: border-box;
@@ -8,13 +8,14 @@
 body{
     background-color:#b8dbb8;
     background-image:linear-gradient(315deg,#bddbb8 0%,#f5f7f7 100%);
-    font-family: 'Great vibes';
+    /* font-family: 'Great vibes'; */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: hidden;
-    margin: 0;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 button {
@@ -27,4 +28,9 @@ button {
   display: inline-block;
   font-size: 16px;
 
+}
+
+#startQuiz {
+background-color: blue;
+border: radius 10px;;
 }
