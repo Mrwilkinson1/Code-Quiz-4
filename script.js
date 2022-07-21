@@ -34,7 +34,8 @@ const sportsInfo = [
 
 // varibles
 var quiz = document.getElementById('quiz')
-var answerEls = document.querySelectorAll('.answer')
+var answerText = document.querySelectorAll('.answer')
+var questionText = document.getElementById()
 var questionEl = document.getElementById('question')
 var a_text = document.getElementById('a_text')
 var b_text = document.getElementById('b_text')
@@ -49,19 +50,54 @@ const startEvent= (e) => {
 console.log('click event response', e);
 // make quiz visable
 quiz.style.display = "inline";
+quiz.style.visibility = "visible";
 startSection,style.display = "none";
 
 }
-console.log(startButton, startButton.addEventListener('click',startEvent))
+
+// ADD ACTION TO SUMBIT
+const quizAnswer = (e) => {
+    console.log('quizAnswers',e)
+}
+
+
+// EVENT LISTENER
+startButton, startButton.addEventListener('click',startEvent)
+submitBtn.addEventListener("click", quizAnswer),
 
 let sportsQuiz = 0
 let score = 0
 
-for (let i = 0; i < sportsInfo.length; i++) {
-    const ques = sportsInfo[i]
 
-a_option.innerHTML = ques.a
-b_option.innerHTML = ques.b
-c_option.innerHTML = ques.c
-d_option.innerHTML = ques.d
+// for (let i = 0; i < sportsInfo.length; i++) {
+//    const ques = sportsInfo[i]
+
+// a_option.innerHTML = ques.a
+// b_option.innerHTML = ques.b
+// c_option.innerHTML = ques.c
+// d_option.innerHTML = ques.d
+// }
+
+let counter = 0;
+while (counter <= sportsInfo,length){
+    questionText.innerHTML = 
+    a_option.innerHTML = sportsInfo[counter].a
+    b_option.innerHTML = sportsInfo[counter].b
+    c_option.innerHTML = sportsInfo[counter].c
+    d_option.innerHTML = sportsInfo[counter].d
+        //conditionals 
+    if()
+
+        counter++
+      if (counter === sportsInfo.length) {
+           break
+        }
+
 }
+
+
+
+
+
+
+
