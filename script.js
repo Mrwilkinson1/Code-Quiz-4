@@ -31,73 +31,75 @@ const sportsInfo = [
         correct: "d",
     },
 ];
-
 // varibles
-var quiz = document.getElementById('quiz')
-var answerText = document.querySelectorAll('.answer')
-var questionText = document.getElementById()
-var questionEl = document.getElementById('question')
-var a_text = document.getElementById('a_text')
-var b_text = document.getElementById('b_text')
-var c_text = document.getElementById('c_text')
-var d_text = document.getElementById('d_text')
-var submitBtn = document.getElementById('submit')
+let quiz = document.getElementById('quiz')
+let questionText = document.getElementById('question')
+let a_option = document.getElementById('a_option')
+let b_option = document.getElementById('b_option')
+let c_option = document.getElementById('c_option')
+let d_option = document.getElementById('d_option')
+let submitBtn = document.getElementById('submitButton')
+// let updatepoints = document.getElementById('totalPoints');
 
 let startButton = document.getElementById("startQuiz");
 let startSection = document.getElementById("startPage");
+let counter = 0;
+let points = 0;
+
+questionText.innerHTML = sportsInfo[counter].question
+a_option.innerHTML = sportsInfo[counter].a
+b_option.innerHTML = sportsInfo[counter].b
+c_option.innerHTML = sportsInfo[counter].c
+d_option.innerHTML = sportsInfo[counter].d
+// updatePoints.innerHTML = points;
+
 // ADD ACTION TO BUTTON
-const startEvent= (e) => {
-console.log('click event response', e);
-// make quiz visable
-quiz.style.display = "inline";
-quiz.style.visibility = "visible";
-startSection,style.display = "none";
-
+const startEvent = (e) => {
+    
+    console.log("startevent", e)
+    // make quiz visable
+    quiz.style.display = "inline";
+    // quiz.style.visibility = "visible"
+    startSection.style.display = "none";
+    setTimer()
 }
 
-// ADD ACTION TO SUMBIT
-const quizAnswer = (e) => {
-    console.log('quizAnswers',e)
+const setTimer = () => {
+    
 }
 
+// ADD ACTION TO SUMBIT BUTTON
+
+document.getElementById('submitButton').onclick = function() {
+    var radios = document.getElementsByName('answer');
+    
+        for (var radio of radios) {
+    
+            if (radio.checked) {
+                let selectedAnswer = radio.id;
+        
+            if (selectedAnswer === sportsInfo[counter].correct){
+                points+=10
+            }
+                // MOVE TO NEXT ITEM IN ARRAY
+                counter++
+                // SET NEW VALUES FROM ARRAY TO ANSWER
+    questionText.innerHTML = sportsInfo[counter].question
+        a_option.innerHTML = sportsInfo[counter].a
+        b_option.innerHTML = sportsInfo[counter].b
+        c_option.innerHTML = sportsInfo[counter].c
+        d_option.innerHTML = sportsInfo[counter].d
+    
+    
+                // a_option.innerText = sportsInfo[counter].a
+        }
+    }
+
+
+}
 
 // EVENT LISTENER
-startButton, startButton.addEventListener('click',startEvent)
-submitBtn.addEventListener("click", quizAnswer),
-
-let sportsQuiz = 0
-let score = 0
-
-
-// for (let i = 0; i < sportsInfo.length; i++) {
-//    const ques = sportsInfo[i]
-
-// a_option.innerHTML = ques.a
-// b_option.innerHTML = ques.b
-// c_option.innerHTML = ques.c
-// d_option.innerHTML = ques.d
-// }
-
-let counter = 0;
-while (counter <= sportsInfo,length){
-    questionText.innerHTML = 
-    a_option.innerHTML = sportsInfo[counter].a
-    b_option.innerHTML = sportsInfo[counter].b
-    c_option.innerHTML = sportsInfo[counter].c
-    d_option.innerHTML = sportsInfo[counter].d
-        //conditionals 
-    if()
-
-        counter++
-      if (counter === sportsInfo.length) {
-           break
-        }
-
-}
-
-
-
-
-
+// submitBtn.addEventListener("click", quizAnswer)
+startButton.addEventListener("click", startEvent)
 
 

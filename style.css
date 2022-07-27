@@ -31,6 +31,11 @@ button {
 }
 
 #startQuiz {
-background-color: blue;
+background-color: rgb(8, 23, 222);
 border: radius 10px;;
+}
+
+#result {
+
+    font-size: x-large;
 }

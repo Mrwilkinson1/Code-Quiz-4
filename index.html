@@ -24,36 +24,84 @@
 <button id="startQuiz"> Start Button</button>
 </div>
       <!-- QUESTION -->
-              
-      
-      
+           
+   
       <!-- ANSWERS SECTION -->
-<div class="sports-container"id="quiz" hidden>
+<div class="sports-container" id="quiz" hidden>
+<!-- TIMER -->
+<div> 
+    <div id = "result">
+</div>
+<!-- POINTS -->
+     <h2 id="totalPoints"></h2>
+
+  </div>   
+
   <div class="sports-header">
       <h2 id="question">Question Text</h2>
 
              <ul>
                   <li>
                     <input type="radio"name="answer"id="a"class="answer">
-                    <label for="a"id="a_text">Answer</label>
+                    <label for="a"id="a_option">Answer</label>
                   </li>
                   <li>
                     <input type="text"name="answer"id="b"class="answer">
-                    <label for="b"id="b_text">Answer</label>
+                    <label for="b"id="b_option">Answer</label>
                   </li>
                   <li>
                     <input type="checkbox"name="answer"id="c"class="answer">
-                    <label for="c"id="c_text">Answer</label>
+                    <label for="c"id="c_option">Answer</label>
                   </li>
                   <li>
                     <input type="radio"name="answer"id="d"class="answer">
-                    <label for="d"id="d_text">Answer</label>
+                    <label for="d"id="d_option">Answer</label>
                   </li>
             </ul>
-         </div>
-         <!-- SUBMIT BUTRON -->
-         <button id="submit">Next</button>
+          </div>
+         <button id="submitButton">Next</button>
+        </div>
+                
+       
+</div>  
+        
+        <!-- SCORES -->
+                <script>
+                  // Set the date we're counting down to
+                  var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+                  
+                  // Update the count down every 1 second
+                  var x = setInterval(function() {
+                  
+                    // Get today's date and time
+                    var now = new Date().getTime();
+                  
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+                  
+                    // Time calculations for days, hours, minutes and seconds
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                  
+                    // Display the result in the element with id="demo"
+                    document.getElementById("result").innerHTML = seconds + "s ";
+                  
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                      clearInterval(x);
+                      document.getElementById("demo").innerHTML = "EXPIRED";
+                    }
+                  }, 1000);
+                  </script>
 
+
+
+
+
+
+
+
+
+        
 </main>   
  
 
